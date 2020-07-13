@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
+//using System.Data;
+//using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Npgsql;
 
 namespace DBFiller
 {
@@ -40,27 +41,28 @@ namespace DBFiller
         }
 
 
+        //private const string connectionString = @"Host=localhost;Port=5432;Database=paintingsdb;Username=postgres;Password=enderant007A";
         private const string connectionString = @"Host=localhost;Port=5432;Database=paintingsdb;Username=postgres;Password=enderant007A";
 
         private void button2_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand();
+                NpgsqlCommand command = new NpgsqlCommand();
                 command.Connection = connection;
-                command.CommandText = @"INSERT INTO Paintings VALUES (@FileName, @PictureName, @Description, @ImageData)";
-                command.Parameters.Add("@FileName", SqlDbType.NVarChar, 50);
-                command.Parameters.Add("@PictureName", SqlDbType.NVarChar, 50);
-                command.Parameters.Add("@FileDesc", SqlDbType.NVarChar, 10000);
-                command.Parameters.Add("@Image", SqlDbType.Image, 100000000);
+                command.CommandText = "INSERT INTO \"Paintings\" VALUES (@FileName, @PictureName, @Description, @ImageData)";
+                command.Parameters.Add("@FileName", NpgsqlTypes.NpgsqlDbType.Char, 50);
+                command.Parameters.Add("@PictureName", NpgsqlTypes.NpgsqlDbType.Char, 50);
+                command.Parameters.Add("@Description", NpgsqlTypes.NpgsqlDbType.Char, 10000);
+                command.Parameters.Add("@ImageData", NpgsqlTypes.NpgsqlDbType.Bytea, 100000000);
 
 
                 // передаем данные в команду через параметры
                 command.Parameters["@FileName"].Value = shortFileName;
                 command.Parameters["@PictureName"].Value = pictureNameTB.Text;
-                command.Parameters["@FileDesc"].Value = pictureDescTB.Text;
-                command.Parameters["@Image"].Value = imageData;
+                command.Parameters["@Description"].Value = pictureDescTB.Text;
+                command.Parameters["@ImageData"].Value = imageData;
 
                 command.ExecuteNonQuery();
             }
