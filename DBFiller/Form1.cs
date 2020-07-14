@@ -51,7 +51,8 @@ namespace DBFiller
                 connection.Open();
                 NpgsqlCommand command = new NpgsqlCommand();
                 command.Connection = connection;
-                command.CommandText = "INSERT INTO \"Paintings\" VALUES (@FileName, @PictureName, @Description, @ImageData)";
+                // command.CommandText = "INSERT INTO \"Paintings\" VALUES (@FileName, @PictureName, @Description, @ImageData)";
+                command.CommandText = "INSERT INTO \"Paintings\" (\"ImageData\", \"FileName\", \"PictureName\", \"Description\") VALUES (@ImageData, @FileName, @PictureName, @Description)";
                 command.Parameters.Add("@FileName", NpgsqlTypes.NpgsqlDbType.Char, 50);
                 command.Parameters.Add("@PictureName", NpgsqlTypes.NpgsqlDbType.Char, 50);
                 command.Parameters.Add("@Description", NpgsqlTypes.NpgsqlDbType.Char, 10000);
