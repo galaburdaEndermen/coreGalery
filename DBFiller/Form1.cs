@@ -66,6 +66,10 @@ namespace DBFiller
                 command.Parameters["@ImageData"].Value = imageData;
 
                 command.ExecuteNonQuery();
+
+                pictureNameTB.Clear();
+                pictureDescTB.Clear();
+                fileNameTB.Clear();
             }
         }
     }

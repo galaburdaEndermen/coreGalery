@@ -9,15 +9,15 @@ namespace coreGalery.Controllers
 {
     public class HomeController : Controller
     {
-        private GaleryDbContext context;
-        public HomeController(GaleryDbContext context)
+        private IPaintingRepo repo;
+        public HomeController(IPaintingRepo repo)
         {
-            this.context = context;
+            this.repo = repo;
         }
 
         public ViewResult Index()
         {
-            return View(context.Paintings.ToList());
+            return View(repo.Paintings.ToList());
         }
     }
 }

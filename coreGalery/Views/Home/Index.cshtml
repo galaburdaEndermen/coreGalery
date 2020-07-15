@@ -10,10 +10,41 @@
 
 <body>
 
-    @foreach (PaintingModel painting in Model)
-    {
-        <h1>@painting.PictureName</h1>
-    }
+    <div class="top">
+        <div class="top-text">
+            <h1>Картинна галерея</h1>
+            <p>Картини великих художників, живопис майстрів минулого та сучасності з кращих музеїв світу.</p>
+        </div>
+    </div>
+
+    <div id="maindiv">
+        <div class="container">
+            @foreach (PaintingModel painting in Model)
+            {
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content">
+                            <img id="img" src="~/Paintings/@painting.FileName"/>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>@painting.PictureName</p>
+                            <a href="#">Дізнатись більше</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="bot">
+        <div class="bot-text">
+
+            <a href="Feedback.aspx">Зворотній зв'язок</a>
+            <p>Сайт Галабурди Антона</p>
+        </div>
+    </div>
 
 
 </body>

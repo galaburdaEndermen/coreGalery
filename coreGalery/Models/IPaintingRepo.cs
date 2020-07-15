@@ -5,8 +5,11 @@ using System.Threading.Tasks;
 
 namespace coreGalery.Models
 {
-    interface IPaintingRepo
+    public interface IPaintingRepo
     {
         IQueryable<PaintingModel> Paintings { get; }
+
+        void EnsureSaved();
+        void EnsureSaved(int id);
     }
 }

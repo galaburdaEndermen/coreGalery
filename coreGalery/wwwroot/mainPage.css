@@ -6,7 +6,7 @@ body
     background: url(fon.gif) no-repeat center center fixed;
     background-size: cover;
     backdrop-filter: blur(5px);
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     font-family: Consolas;
@@ -16,6 +16,7 @@ body
 {
     height: 88vh; /*возможні баги через різні розрешенія*/
     position: relative;
+    display: block;
 }
 .top-text 
 {
@@ -28,11 +29,13 @@ body
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    width: 80%;
+    width: 70%;
     height: 20%;
     padding: 20px;
     text-align: center;
 }
+
+/*/////////////////////////////////////*/
 .bot 
 {
     height: 60px;
@@ -84,6 +87,10 @@ body
     background: white;
     color: black;
 }
+/*/////////////////////////////////////*/
+
+
+
 .container
 {
     /*width: 1000px;*/
@@ -94,6 +101,7 @@ body
 
     display: flex;
     flex-wrap: wrap;
+    margin: auto;
     
 }
 .container .card
