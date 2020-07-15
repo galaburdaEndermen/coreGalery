@@ -10,6 +10,5 @@ namespace coreGalery.Models
         IQueryable<PaintingModel> Paintings { get; }
 
         void EnsureSaved();
-        void EnsureSaved(int id);
     }
 }

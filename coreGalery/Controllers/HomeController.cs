@@ -17,7 +17,7 @@ namespace coreGalery.Controllers
 
         public ViewResult Index()
         {
-            return View(repo.Paintings.ToList());
+            return View(repo.Paintings);
         }
     }
 }
