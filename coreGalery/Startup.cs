@@ -37,12 +37,30 @@ namespace coreGalery
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                //app.UseDeveloperExceptionPage();
+                app.UseExceptionHandler("/Error");
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
             }
             app.UseStaticFiles();
             app.UseStatusCodePages();
-            app.UseMvcWithDefaultRoute();
-           
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute
+                (
+                   name: null,
+                   template: "Error",
+                   defaults: new { controller = "Error", action = "Error"}
+                );
+                routes.MapRoute
+                 (
+                    name: null,
+                    template: "{controller=Home}/{action=Index}/{id:int?}"
+                 );
+            });
+
         }
     }
 }
