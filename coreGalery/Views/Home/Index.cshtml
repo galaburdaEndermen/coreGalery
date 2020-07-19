@@ -30,7 +30,7 @@
                     <div class="face face2">
                         <div class="content">
                             <p>@painting.PictureName</p>
-                            <a href="#">Дізнатись більше</a>
+                            <a asp-controller="Galery" asp-action="Picture" asp-route-id="@painting.Id">Дізнатись більше</a>
                         </div>
                     </div>
                 </div>
@@ -38,14 +38,7 @@
         </div>
     </div>
 
-    <div class="bot">
-        <div class="bot-text">
-
-            <a href="Feedback.aspx">Зворотній зв'язок</a>
-            <p>Сайт Галабурди Антона</p>
-        </div>
-    </div>
-
+  
 
 </body>
 

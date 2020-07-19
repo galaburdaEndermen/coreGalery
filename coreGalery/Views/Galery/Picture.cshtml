@@ -1,4 +1,4 @@
-﻿@model int
+﻿@model PaintingModel
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -10,28 +10,31 @@
 
 <body>
 
-    <div id="maindiv" runat="server" style="width:75vw; ">
+    <div id="maindiv" style="width:75vw;">
 
-        <div id="image" runat="server" class="tmp">
-            <a class="left" runat="server"></a>
-            <a class="right" runat="server"></a>
+        <div id="image" class="tmp">
+            <img id="img" src="~/Paintings/@Model.FileName" class="picture" />
+            @if (ViewBag.leftId != Model.Id)
+            {
+                <a class="left" asp-route-id="@ViewBag.leftId"></a>
+            }
+            @if (ViewBag.rightId != Model.Id)
+            {
+                <a class="right" asp-route-id="@ViewBag.rightId"></a>
+            }
         </div>
 
-    </div>
-
-
-    <h1>@Model</h1>
-
-
-
-    <div class="bot">
-        <div class="bot-text">
-
-            <a href="Default.aspx">Головна сторінка</a>
-            <p>Сайт Галабурди Антона</p>
+        <div class="article">
+            <h3>@Model.PictureName</h3>
+            <p>@Model.Description</p>
         </div>
     </div>
 
+
+
+
+
+   
 
 </body>
 
