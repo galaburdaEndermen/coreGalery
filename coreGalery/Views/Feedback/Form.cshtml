@@ -1,0 +1,43 @@
+﻿@model LetterModel
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" asp-href-include="feedbackPage.css" />
+
+
+    <title></title>
+</head>
+
+<body>
+
+    <div class="top">
+        <h1>Зворотній зв'язок</h1>
+        <p>Ваша думка для нас важлива</p>
+    </div>
+
+    <div class="mainform">
+        <div asp-validation-summary="All"></div>
+
+        <form asp-action="Form" method="post">
+
+            <p>Ваше ім'я</p>
+            <input asp-for="Name" class="text-box" />
+            <p>Тема листа</p>
+            <input asp-for="Subject" class="text-box" />
+            <p>Ваша електронна пошта</p>
+            <input asp-for="Email" class="text-box" />
+            <p>Ваш лист</p>
+            <input asp-for="Text" class="letter-box" />
+
+            <div class="btn-box">
+               <button type="submit" class="butn">Надіслати</button>
+            </div>
+
+        </form>
+
+    </div>
+
+
+</body>
+
+</html>
