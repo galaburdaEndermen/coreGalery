@@ -38,7 +38,10 @@
         </div>
     </div>
 
-  
+   @await Html.PartialAsync("BottomPartial", new Dictionary<string, (string cont, string act)>
+{
+    { "Головна сторінка", (cont:"Home", act:"Index") }
+})
 
 </body>
 

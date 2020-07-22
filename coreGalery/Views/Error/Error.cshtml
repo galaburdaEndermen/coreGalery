@@ -20,10 +20,15 @@
             </a>
         </a>
 
-        <div style="width: 75vw; height:6vh;"></div>
+        @*<div style="width: 75vw; height:6vh;"></div>*@
 
 
     </div>
+
+    @await Html.PartialAsync("BottomPartial", new Dictionary<string, (string cont, string act)>
+{
+ { "Головна сторінка", (cont:"Home", act:"Index") }
+})
 
 
 </body>

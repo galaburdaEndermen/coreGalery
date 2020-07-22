@@ -1,1 +1,14 @@
-﻿
+﻿@model Dictionary<string, (string cont, string act)>
+
+<footer class="bot">
+    <div class="bot-text">
+        @*<a href="Default.aspx">Головна сторінка</a>*@
+
+    @foreach (var href in Model)
+    {
+        <a asp-controller="@href.Value.cont" asp-action="@href.Value.act">@href.Key</a>
+    }
+
+        <p>Сайт Галабурди Антона</p>
+    </div>
+</footer>

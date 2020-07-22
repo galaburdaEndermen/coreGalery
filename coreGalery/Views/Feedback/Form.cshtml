@@ -30,12 +30,18 @@
             <input asp-for="Text" class="letter-box" />
 
             <div class="btn-box">
-               <button type="submit" class="butn">Надіслати</button>
+                <button type="submit" class="butn">Надіслати</button>
             </div>
 
         </form>
 
     </div>
+
+
+    @await Html.PartialAsync("BottomPartial", new Dictionary<string, (string cont, string act)>
+{
+ { "Головна сторінка", (cont:"Home", act:"Index") }
+})
 
 
 </body>
