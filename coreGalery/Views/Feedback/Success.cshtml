@@ -9,21 +9,19 @@
 </head>
 
 <body>
-    <div>
 
-        <a class="top" asp-controller="Home" asp-action="Index">
+        <div class="top" asp-controller="Home" asp-action="Index">
             <a asp-controller="Home" asp-action="Index" style="height: 100%; width: 100%;">
                 <div class="top-text">
                     <h1>Ваш лист отримано та буде прийнято до уваги</h1>
                     <p>Натисніть сюди, щоб повернутись на головну.</p>
                 </div>
             </a>
-        </a>
-
-        @*<div style="width: 75vw; height:6vh;"></div>*@
 
 
-    </div>
+
+        </div>
+    @*<div style="height:50vh;"></div>*@
 
     @await Html.PartialAsync("BottomPartial", new Dictionary<string, (string cont, string act)>
 {

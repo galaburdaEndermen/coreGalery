@@ -17,11 +17,12 @@
     margin-top: 40px;
     position:relative;
 }
+/*/////////////////////////////////////*/
 .bot 
 {
     height: 60px;
-    width: 100%;
-    position: relative
+    width: 85%;
+    margin:auto;
 }
 .bot-text
 {
@@ -32,12 +33,6 @@
 
     color: black;
     font-weight: bold;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 115%;
     height: 100%;
     text-align: center;
 
@@ -68,6 +63,9 @@
     background: white;
     color: black;
 }
+/*/////////////////////////////////////*/
+
+
 .tmp .picture 
 {
     /*margin-top: 40px;*/

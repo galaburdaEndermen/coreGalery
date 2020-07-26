@@ -12,25 +12,25 @@
     font-family: Consolas;
 }
 
-.top
-{
+.top {
     background-color: rgba(250,250,250, 0.4);
     color: black;
     font-weight: bold;
     border: 3px solid #f1f1f1;
     padding: 20px;
     text-align: center;
-
     margin-top: 25px;
-
     height: 100px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
-
+/*/////////////////////////////////////*/
 .bot 
 {
     height: 60px;
-    width: 100%;
-    position: relative
+    width: 85%;
+    margin:auto;
 }
 .bot-text
 {
@@ -41,12 +41,6 @@
 
     color: black;
     font-weight: bold;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 115%;
     height: 100%;
     text-align: center;
 
@@ -62,7 +56,7 @@
 .bot-text a
 {
     margin: 15px 15px 0;
-    display: inline-block;
+    display: inline-block; 
 
     text-decoration: none;
     font-weight: 900;
@@ -77,19 +71,20 @@
     background: white;
     color: black;
 }
-.mainform
-{
-    padding-top: 20px;
+/*/////////////////////////////////////*/
+
+
+
+.mainform {
+    padding: 20px;
     background: white;
     box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-
-    width: 75vw;
+    width: 70%;
     height: 800px;
-
     margin-top: 25px;
     margin-bottom: 75px;
-
-
+    margin-left: auto;
+    margin-right: auto;
 }
 .text-box
 {

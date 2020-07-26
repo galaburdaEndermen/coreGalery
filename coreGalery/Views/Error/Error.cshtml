@@ -9,21 +9,18 @@
 </head>
 
 <body>
-    <div>
 
-        <a class="top" asp-controller="Home" asp-action="Index">
+
+        <div class="top" asp-controller="Home" asp-action="Index">
             <a asp-controller="Home" asp-action="Index" style="height: 100%; width: 100%;">
                 <div class="top-text">
                     <h1>404, сторінку не знайдено</h1>
                     <p>Натисніть сюди, щоб повернутись на головну.</p>
                 </div>
             </a>
-        </a>
-
-        @*<div style="width: 75vw; height:6vh;"></div>*@
+        </div>
 
 
-    </div>
 
     @await Html.PartialAsync("BottomPartial", new Dictionary<string, (string cont, string act)>
 {
