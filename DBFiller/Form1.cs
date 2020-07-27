@@ -42,7 +42,7 @@ namespace DBFiller
 
 
         //private const string connectionString = @"Host=localhost;Port=5432;Database=paintingsdb;Username=postgres;Password=enderant007A";
-        private const string connectionString = @"Host=localhost;Port=5432;Database=paintingsdb;Username=postgres;Password=enderant007A";
+        private const string connectionString = @"Host=192.168.1.34;Port=5432;Database=paintingsdb;Username=postgres;Password=enderant007A";
 
         private void button2_Click(object sender, EventArgs e)
         {

@@ -25,9 +25,9 @@ namespace coreGalery.Models
         {
             Parallel.ForEach(context.Paintings, (painting) =>
             {
-                if (!File.Exists(appEnvironment.WebRootPath + "\\Paintings\\" + painting.FileName))
+                if (!File.Exists(appEnvironment.WebRootPath + Path.DirectorySeparatorChar + "Paintings" + Path.DirectorySeparatorChar + painting.FileName))
                 {
-                    using (System.IO.FileStream fs = new System.IO.FileStream(appEnvironment.WebRootPath + "\\Paintings\\" + painting.FileName, System.IO.FileMode.OpenOrCreate))
+                    using (System.IO.FileStream fs = new System.IO.FileStream(appEnvironment.WebRootPath + Path.DirectorySeparatorChar + "Paintings" + Path.DirectorySeparatorChar + painting.FileName, System.IO.FileMode.OpenOrCreate))
                     {
                         fs.Write(painting.ImageData, 0, painting.ImageData.Length);
                     }
